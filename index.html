@@ -222,7 +222,7 @@
                 <h4 class="typeApto">Apartamento</h4>
                 <div class="imgApto"><img  src="images/apto1.jpg"></div> <br>
                 <span class="textItem">Precio: </span>1.000.000<br>
-                <span class="barrioItem">Barrio: </span>Gran America<br>
+                <span >Barrio: </span><span class="barrioItem">Teusaquillo</span><br>
                 <span class="textItem">Dirección: </span> Cra 1 #1-2
             </div>
          </div>
@@ -232,7 +232,7 @@
                 <h4 class="typeApto">Apartamento</h4>
                 <img class="imgApto" src="images/apto2.jpg"><br>
                 <span class="textItem">Precio: </span>1.000.000<br>
-                <span class="barrioItem">Barrio: </span>Teusaquillo <br>
+                <span >Barrio: </span><span class="barrioItem">Teusaquillo</span><br>
                 <span class="textItem">Dirección: </span> Cra 1 #1-2
             </div>
          </div>
@@ -242,7 +242,7 @@
                 <h4 class="typeApto">Apartaestudio</h4>
                 <img class="imgApto" src="images/apto3.jpg"><br>
                 <span class="textItem">Precio: </span>1.000.000<br>
-                <span class="barrioItem">Barrio: </span>Gran America<br>
+                <span >Barrio: </span><span class="barrioItem">Gran America</span><br>
                 <span class="textItem">Dirección: </span> Cra 1 #1-2
             </div>
          </div>
@@ -254,7 +254,7 @@
                 <h4 class="typeApto">Apartaestudio</h4>
                 <img class="imgApto" src="images/apto4.jpg"><br>
                 <span class="textItem">Precio: </span>1.000.000<br>
-                <span class="barrioItem">Barrio: </span>Quinta Paredes <br>
+                <span >Barrio: </span><span class="barrioItem">Quinta Paredes</span><br>
                 <span class="textItem">Dirección: </span> Cra 1 #1-2
             </div>
         </div>
@@ -264,7 +264,7 @@
                 <h4 class="typeApto">Apartamento</h4>
                 <img class="imgApto" src="images/apto5.jpg"><br>
                 <span class="textItem">Precio: </span>1.000.000<br>
-                <span class="barrioItem">Barrio: </span>Teusaquillo <br>
+                <span >Barrio: </span><span class="barrioItem">Teusaquillo</span><br>
                 <span class="textItem">Dirección: </span> Cra 1 #1-2
             </div>
         </div>
@@ -274,7 +274,7 @@
                 <h4 class="typeApto">Apartamento</h4>
                 <img class="imgApto" src="images/apto6.jpg"><br>
                 <span class="textItem">Precio: </span>1.000.000<br>
-                <span class="barrioItem">Barrio: </span>Quinta Paredes <br>
+                <span >Barrio: </span><span class="barrioItem">Quinta Paredes</span><br>
                 <span class="textItem">Dirección: </span> Cra 1 #1-2
             </div>
         </div>
@@ -286,7 +286,7 @@
                 <h4 class="typeApto">Habitaciones</h4>
                 <img class="imgApto" src="images/apto7.jpg"><br>
                 <span class="textItem">Precio: </span>1.000.000<br>
-                <span class="barrioItem">Barrio: </span>Teusaquillo <br>
+                <span >Barrio: </span><span class="barrioItem">Teusaquillo</span><br>
                 <span class="textItem">Dirección: </span> Cra 1 #1-2
             </div> 
         </div>
@@ -296,7 +296,7 @@
                 <h4 class="typeApto">Habitaciones</h4>
                 <img class="imgApto" src="images/apto8.jpg"><br>
                 <span class="textItem">Precio: </span>1.000.000<br>
-                <span class="barrioItem">Barrio: </span>Gran Ammerica<br>
+                <span >Barrio: </span><span class="barrioItem">Gran America</span><br>
                 <span class="textItem">Dirección: </span> Cra 1 #1-2
             </div> 
         </div>
@@ -306,7 +306,7 @@
                 <h4 class="typeApto">Habitaciones</h4>
                 <img class="imgApto" src="images/apto9.jpg"><br>
                 <span class="textItem">Precio: </span>1.000.000<br>
-                <span class="barrioItem">Barrio: </span>Teusaquillo <br>
+                <span >Barrio: </span><span class="barrioItem">Teusaquillo</span><br>
                 <span class="textItem">Dirección: </span> Cra 1 #1-2
             </div> 
         </div>
@@ -317,12 +317,57 @@
      <script> 
 
      var valorPrimerFiltro = document.querySelector('#primerFiltro').value;
-     var allApto = docuemnt.querySelectorAll('.apto');
+     var allApto = document.querySelectorAll('.apto');
 
-     for(var i = 0; i >=9; i++){
-        allApto.[i].
-        if()
-     }
+     document.querySelector('#primerFiltro').addEventListener('click', (e)=> {
+        var valorPrimerFiltro = document.querySelector('#primerFiltro').value;    
+        console.log(valorPrimerFiltro); 
+
+        if(valorPrimerFiltro == 'value2'){
+            for(var i = 0; i <=9; i++){
+              var nameBarrio = allApto[i].children[6].textContent;  
+              console.log(nameBarrio);    
+
+              if(nameBarrio == 'Teusaquillo'){
+                console.log('Eliminando apto');
+                allApto[i].style.display = "block";
+              } else {
+                allApto[i].style.display = "none";
+              }
+         };     
+        }
+
+         else if(valorPrimerFiltro == 'value3'){
+            for(var i = 0; i <=9; i++){
+              var nameBarrio = allApto[i].children[6].textContent;  
+              console.log(nameBarrio);                  
+              
+              if(nameBarrio == 'Quinta Paredes'){
+                console.log('Eliminando apto');
+                allApto[i].style.display = "block";
+              } else {
+                allApto[i].style.display = "none";
+              }
+              console.log('terminando codigo')
+         }         
+         }
+
+        else if(valorPrimerFiltro == 'value4'){
+            for(var i = 0; i <=9; i++){
+              var nameBarrio = allApto[i].children[6].textContent;  
+              console.log(nameBarrio);               
+             
+              if(nameBarrio == 'Gran America'){
+                console.log('Eliminando apto');
+                allApto[i].style.display = "block";
+              } else {
+                allApto[i].style.display = "none";
+              }
+              console.log('terminando codigo')
+         }         
+         }
+     })
+     
    /*
         var apto1 = {priceApto: "1.000.000", nameBarrio: "Universidad Nacional", directionApto: "Cra 1 #1-2", tipoApto: "Apartamento", contactApto: 314-556-5789, numberHabi: 1, servicesIn: "Habitaciones individuales con baño compartido, incluye servicios, televisión y WiFi. Habitación con baño privado, servicios incluidos, televisión y WiFi."};
         var structHtml = document.querySelectorAll(".apto");
